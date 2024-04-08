@@ -7,3 +7,7 @@ from django.template import loader
 def members(request):
     template = loader.get_template('first.html')
     return HttpResponse(template.render())
+
+
+def get_list(request):
+    return HttpResponse("This is a response")
