@@ -40,7 +40,7 @@ def task_update(request, pk):
         form = TaskForm(request.POST, instance=task_obj)
         if form.is_valid():
             form.save()
-            return redirect(reverse('tasks:task_detail'), args=[pk,])
+            return redirect(reverse('tasks:task_detail', args=[pk,]))
     else:
         form = TaskForm(instance=task_obj)
     return render(request, 'tasks/task_form.html', {'form': form, 'object': task_obj})
