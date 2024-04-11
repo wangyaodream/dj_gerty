@@ -4,6 +4,10 @@ from django.template import loader
 # Create your views here.
 
 
+def index(request):
+    return HttpResponse("Hello Index.")
+
+
 def members(request):
     template = loader.get_template('first.html')
     return HttpResponse(template.render())

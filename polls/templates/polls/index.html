@@ -1,7 +1,10 @@
 {% if latest_question_list %}
     <ul>
         {% for question in latest_question_list %}
-            <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+{#            这里使用的url硬解码#}
+{#            <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>#}
+{#            detail表示的是polls.urls文件中的name为detail的那条路径#}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
