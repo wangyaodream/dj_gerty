@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "tasks",
     "blog",
     "polls.apps.PollsConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [

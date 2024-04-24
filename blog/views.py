@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     # display article list
-    return HttpResponse("<h1>文章列表</h1>")
+    return render(request, "blog/index.html", {})
 
 
 def article_detail(request, article_id):
