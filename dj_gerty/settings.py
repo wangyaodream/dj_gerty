@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "pages.apps.PagesConfig",
     "projects.apps.ProjectsConfig",
+    "todo_app",
 ]
 
 MIDDLEWARE = [
