@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "pages.apps.PagesConfig",
     "projects.apps.ProjectsConfig",
     "users",
+    "dwitter"
 ]
 
 MIDDLEWARE = [
