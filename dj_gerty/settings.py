@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "members",
-    "tasks",
     "blog",
     "polls.apps.PollsConfig",
     "pages.apps.PagesConfig",
     "projects.apps.ProjectsConfig",
     "users",
+    "dwitter"
 ]
 
 MIDDLEWARE = [
