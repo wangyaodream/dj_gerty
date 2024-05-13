@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "blog",
     "polls.apps.PollsConfig",
     "pages.apps.PagesConfig",
-    "projects.apps.ProjectsConfig",
     "users",
     "dwitter"
 ]
