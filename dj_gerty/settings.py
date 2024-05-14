@@ -61,8 +61,8 @@ ROOT_URLCONF = "dj_gerty.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        # "DIRS": [BASE_DIR / 'templates']
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
