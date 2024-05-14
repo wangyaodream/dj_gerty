@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "pages.apps.PagesConfig",
     "users",
-    "dwitter"
+    "dwitter",
+    "website",
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,13 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
+    },
+    "website": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "website",
+        "USER": "root",
+        "PASSWORD": "Dream462213925",
+        "HOST": "127.0.0.1",
     }
 }
 
