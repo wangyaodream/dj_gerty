@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "pages.apps.PagesConfig",
     "users",
-    "dwitter",
     "website",
 ]
 
