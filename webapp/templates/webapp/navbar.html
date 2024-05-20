@@ -19,11 +19,11 @@
         {% else %}
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Register</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'webapp:register' %}">Register</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="{% url 'webapp:my-login' %}">Login</a>
         </li>
         {% endif %}
     </div>
