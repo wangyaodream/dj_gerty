@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 
 from .forms import CreateUserForm, LoginForm
+from .models import Record
 
 
 def home(request):
@@ -18,7 +20,7 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('webapp/home.html')
+            return redirect('webapp:my-login')
     
     context = {'form': form}
 
@@ -45,7 +47,21 @@ def my_login(request):
                 auth.login(request, user)
 
                 # 定位到dashboard
-                # return redirect("")
+                return redirect("webapp:dashboard")
     
     context = {'form': form}
     return render(request, "webapp/my-login.html", context=context)
+
+
+def user_logout(request):
+    auth.logout(request)
+    return redirect("webapp:my-login")
+
+
+@login_required(login_url='my-login')
+def dashboard(request):
+    my_records = Record.objects.all()
+
+    context = {'records': my_records}
+
+    return render(request, "webapp/dashboard.html", context=context)
