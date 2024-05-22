@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "webapp/base.html" %}
 
-</body>
-</html>
+{% block content  %}
+
+    <strong>
+        {{record.first_name|upper}}
+
+        {{record.last_name|upper}}
+    </strong>
+
+    <div class="card">
+        <div class="card-body">
+            <p><strong>ID: </strong> {{record.id}} </p>
+            <p><strong>Email: </strong> {{record.email}} </p>
+            <p><strong>Phone: </strong> {{record.phone}} </p>
+            <p><strong>address: </strong> {{record.address}} </p>
+            <p><strong>City: </strong> {{record.city}} </p>
+            <p><strong>Province: </strong> {{record.province}} </p>
+            <p><strong>Country: </strong> {{record.country}} </p>
+            <p><strong>Create date: </strong> {{record.create_date}} </p>
+        </div>
+    </div>
+
+{% endblock  %}
