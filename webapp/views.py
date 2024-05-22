@@ -110,4 +110,12 @@ def view_record(request, pk):
     }
 
     return render(request, "webapp/view-record.html", {'record': all_records})
-    
+
+
+@login_required(login_url="my-login")
+def delete_record(request, pk):
+    record = Record.objects.get(id=pk)
+
+    record.delete()
+
+    return redirect("webapp:dashboard")

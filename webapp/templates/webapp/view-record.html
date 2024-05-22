@@ -8,6 +8,8 @@
         {{record.last_name|upper}}
     </strong>
 
+    <hr>
+
     <div class="card">
         <div class="card-body">
             <p><strong>ID: </strong> {{record.id}} </p>
@@ -17,8 +19,16 @@
             <p><strong>City: </strong> {{record.city}} </p>
             <p><strong>Province: </strong> {{record.province}} </p>
             <p><strong>Country: </strong> {{record.country}} </p>
-            <p><strong>Create date: </strong> {{record.create_date}} </p>
+            <p><strong>Create date: </strong> {{record.creation_date}} </p>
         </div>
     </div>
+
+    <br>
+
+    <a href="{% url 'webapp:dashboard' %}" class="btn btn-secondary">Return</a>
+    &nbsp;
+    <a href="{% url 'webapp:update-record' record.id%}" class="btn btn-info">Update record</a>
+    &nbsp;
+    <a href="{% url 'webapp:delete-record' record.id%}" class="btn btn-danger">Delete</a>
 
 {% endblock  %}
