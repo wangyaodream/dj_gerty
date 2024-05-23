@@ -12,4 +12,15 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Useage
+
+### homepage
+```
+localhost:8000/
+```
+or
+
+```
+localhost:8000/webapp/
+```
 
