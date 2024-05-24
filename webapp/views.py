@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .forms import CreateUserForm, LoginForm, AddRecordForm, UpdateRecordForm
 from .models import Record
@@ -20,6 +21,7 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Account created successfully")
             return redirect('webapp:my-login')
     
     context = {'form': form}
@@ -46,6 +48,7 @@ def my_login(request):
             if user is not None:
                 auth.login(request, user)
 
+                messages.success(request, "login successfully")
                 # 定位到dashboard
                 return redirect("webapp:dashboard")
     
