@@ -1,1 +1,16 @@
 <h1>Tasks:</h1>
+
+<form method="POST" action="{%url 'todo:index'%}">
+    {% csrf_token %}
+
+    {{TaskForm.title}}
+
+    <input class="btn" type="submit" name="Create Task">
+</form>
+
+{% for task in tasks %}
+
+    <p>{{task}}</p>
+
+
+{% endfor %}

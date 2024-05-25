@@ -77,7 +77,7 @@ def create_record(request):
 
     if request.method == "POST":
         form = AddRecordForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             return redirect("webapp:dashboard")
     
