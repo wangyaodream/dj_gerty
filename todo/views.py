@@ -23,5 +23,18 @@ def index(request):
     return render(request, 'tasks.html', context=context)
 
 
-def updateTask(request):
-    pass
+def updateTask(request, pk):
+    
+    task = Task.objects.get(id=pk)
+
+    # instance来填充form
+    form = TaskForm(instance=task)
+    if request.method == "POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+
+            return redirect("todo:index")
+    context = {"form": form}
+    return render(request, "todo/update-task.html", context=context)
+    

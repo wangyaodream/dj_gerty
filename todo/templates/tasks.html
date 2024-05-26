@@ -9,7 +9,7 @@
 </form>
 
 {% for task in tasks %}
-
+    <a href="{%url 'todo:update-task' task.id%}">update</a>
     <p>{{task}}</p>
 
 
