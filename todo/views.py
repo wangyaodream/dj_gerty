@@ -37,4 +37,6 @@ def updateTask(request, pk):
             return redirect("todo:index")
     context = {"form": form}
     return render(request, "todo/update-task.html", context=context)
-    
+
+
+# TODO delete task
