@@ -9,8 +9,8 @@
 </form>
 
 {% for task in tasks %}
-    <a href="{%url 'todo:update-task' task.id%}">update</a>
     <p>{{task}}</p>
+    <a href="{%url 'todo:update-task' task.id%}">update</a> | <a href="{%url 'todo:delete-task' task.id%}">delete</a>
 
 
 {% endfor %}

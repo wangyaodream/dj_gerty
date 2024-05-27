@@ -40,3 +40,9 @@ def updateTask(request, pk):
 
 
 # TODO delete task
+def deleteTask(request, pk):
+    task = Task.objects.get(id=pk)
+    task.delete()
+
+    return redirect("todo:index")
+
